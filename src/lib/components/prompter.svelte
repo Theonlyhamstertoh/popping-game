@@ -28,12 +28,20 @@
 	import LucidePlus from '~icons/lucide/plus';
 	import { Card, CardContent } from './ui/card';
 	import FileBadge from './file-badge.svelte';
+	import PromptStore from '$lib/stores/prompt.store';
+	import { onDestroy } from 'svelte';
 
 	type FileProps = {
 		id: string;
 		file: File;
 	};
 
+	let prompt = '';
+	const unsubscribe = PromptStore.subscribe((data) => {
+		console.log(data);
+		prompt = data;
+	});
+	onDestroy(unsubscribe);
 	let files: FileProps[] = [];
 	let selectedWordCount = { value: '750', label: '750 Words' };
 	let selectedFormat = { value: 'essay', label: 'Essay' };
@@ -66,6 +74,10 @@
 		files = files.filter((file) => file.id !== id);
 	};
 
+	const handlePromptInput = (e: Event) => {
+		PromptStore.set((e.target as HTMLSpanElement).textContent ?? '');
+	};
+
 	$: console.log(files);
 </script>
 
@@ -74,6 +86,7 @@
 		<span
 			class="min-h-32 w-full resize-none rounded-3xl border-none p-3 text-stone-900 caret-amber-600 outline-none selection:bg-amber-200 empty:text-stone-400 empty:before:content-['Paste_your_prompt_here...']"
 			contenteditable="plaintext-only"
+			on:input={handlePromptInput}
 		/>
 
 		<!-- Uploaded Files -->
