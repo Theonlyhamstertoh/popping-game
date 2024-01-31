@@ -87,11 +87,11 @@
 	$: console.log(files);
 </script>
 
-<Card class="w-full max-w-4xl mx-auto border-2 shadow-xl border-amber-100 shadow-amber-100/70">
+<Card class="w-full max-w-4xl mx-auto border-2 border-green-100 shadow-xl shadow-green-100/70">
 	<CardContent class="grid grid-rows-[1fr_auto_auto]  gap-4 p-4 pb-2">
 		<!-- Text Prompt -->
 		<span
-			class="min-h-32 w-full resize-none rounded-3xl border-none p-3 text-stone-900 caret-amber-600 outline-none selection:bg-amber-200 empty:text-stone-400 empty:before:content-['Paste_your_prompt_here...']"
+			class="min-h-32 w-full resize-none rounded-3xl border-none p-3 text-stone-900 outline-none empty:text-stone-500 empty:before:content-['Paste_in_your_prompt_here_...']"
 			contenteditable="plaintext-only"
 			on:input={handlePromptInput}
 		/>
@@ -106,6 +106,10 @@
 			{/each}
 		</div>
 
+		<div class="flex gap-4">
+			<Input name="textDocumentName" required type="text" placeholder="Target Role" />
+			<Input name="textDocumentName" required type="text" placeholder="" />
+		</div>
 		<div
 			class=" flex w-full flex-col items-start justify-between gap-2 overflow-hidden p-1 pt-0.5 md:flex-row"
 		>

@@ -58,10 +58,32 @@ const config = {
 				sans: [...fontFamily.sans]
 			},
 
+			keyframes: {
+				animatedGradient: {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
+				},
+				bounce: {
+					'0%, 100%': {
+						transform: 'translateY(0%)',
+						'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)'
+					},
+					'50%': {
+						transform: 'translateY(5%)',
+						'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)'
+					}
+				}
+			},
 			backgroundImage: {
-				'dashed-pattern': `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='9' ry='9' stroke='%23E1E1E1' stroke-width='3' stroke-dasharray='20' stroke-dashoffset='20' stroke-linecap='butt'/%3e%3c/svg%3e")`,
-				'cyan-radial':
-					'radial-gradient(93% 92.84% at 50.64% 82.99%, rgba(174, 238, 252, 0.00) 22.52%, rgba(174, 238, 252, 0.00) 71.04%, #AEEEFC 100%);'
+				grid: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e)`
+			},
+			backgroundSize: {
+				'300%': '300%'
+			},
+			animation: {
+				gradient: 'animatedGradient 6s ease infinite alternate',
+				bounce: 'bounce 20s ease infinite alternate'
 			}
 		}
 	}

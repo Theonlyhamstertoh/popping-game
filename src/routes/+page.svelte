@@ -1,22 +1,28 @@
 <script lang="ts">
-	import { FileBadge, HeroTypeWriter, Prompter } from '$lib';
+	import { CoverLetter, FileBadge, HeroTypeWriter, Prompter } from '$lib';
 
 	import { Card, CardContent } from '$lib/components/ui/card';
 
-	import LucideSparkles from '~icons/lucide/sparkles';
+	import * as Tabs from '$lib/components/ui/tabs';
 	import { Button } from '$lib/components/ui/button';
 </script>
 
-<main class="flex min-h-screen w-screen flex-col items-center justify-center bg-amber-50 pt-12">
-	<div
-		class="flex items-center justify-center rounded-full bg-stone-700 p-2 px-4 text-xs text-amber-50 md:text-sm"
-	>
-		<LucideSparkles class="mr-2 inline size-5 text-amber-200" />
-		New! Upload your PDFs & text!
-	</div>
+<main class="flex flex-col w-screen min-h-screen py-0 m-0">
 	<HeroTypeWriter />
+
 	<div class="w-full px-3 py-8">
-		<Prompter />
-		<p class="my-3 text-center text-sm text-amber-900">Made by students. For free.</p>
+		<Tabs.Root value="account" class="max-w-3xl mx-auto">
+			<Tabs.List class="">
+				<Tabs.Trigger value="account">Cover Letter</Tabs.Trigger>
+				<Tabs.Trigger value="password">Essay</Tabs.Trigger>
+				<Tabs.Trigger value="email">Email</Tabs.Trigger>
+				<Tabs.Trigger value="statement">Personal Statement</Tabs.Trigger>
+				<Tabs.Trigger value="summarize">Summarize</Tabs.Trigger>
+			</Tabs.List>
+			<Tabs.Content value="account"><CoverLetter /></Tabs.Content>
+			<Tabs.Content value="password"><Prompter /></Tabs.Content>
+		</Tabs.Root>
+		<!-- <Prompter /> -->
+		<p class="my-3 text-sm text-center text-amber-900">Made by students. For free.</p>
 	</div>
 </main>
