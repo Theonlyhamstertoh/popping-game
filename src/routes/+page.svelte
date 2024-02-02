@@ -1,28 +1,54 @@
 <script lang="ts">
-	import { CoverLetter, FileBadge, HeroTypeWriter, Prompter } from '$lib';
+	import { CoverLetter, FileBadge, GridCard, HeroTypeWriter, Prompter } from '$lib';
 
-	import { Card, CardContent } from '$lib/components/ui/card';
+	import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '$lib/components/ui/card';
 
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { Button } from '$lib/components/ui/button';
+	import LucideArrowRight from '~icons/lucide/arrow-right';
+	import { Separator } from '$lib/components/ui/select';
+	import { Input } from '$lib/components/ui/input';
 </script>
 
-<main class="flex flex-col w-screen min-h-screen py-0 m-0">
+<main class="relative flex flex-col w-screen min-h-screen py-0 m-0">
+	<div class="bg-dotted-blur -z-10"></div>
+
 	<HeroTypeWriter />
 
-	<div class="w-full px-3 py-8">
-		<Tabs.Root value="account" class="max-w-3xl mx-auto">
-			<Tabs.List class="">
-				<Tabs.Trigger value="account">Cover Letter</Tabs.Trigger>
-				<Tabs.Trigger value="password">Essay</Tabs.Trigger>
-				<Tabs.Trigger value="email">Email</Tabs.Trigger>
-				<Tabs.Trigger value="statement">Personal Statement</Tabs.Trigger>
-				<Tabs.Trigger value="summarize">Summarize</Tabs.Trigger>
-			</Tabs.List>
-			<Tabs.Content value="account"><CoverLetter /></Tabs.Content>
-			<Tabs.Content value="password"><Prompter /></Tabs.Content>
-		</Tabs.Root>
-		<!-- <Prompter /> -->
-		<p class="my-3 text-sm text-center text-amber-900">Made by students. For free.</p>
+	<div
+		class="grid w-full grid-cols-1 lg:grid-cols-3 gap-4 relative px-3 py-8 mx-auto max-w-fit lg:max-w-screen-lg bg-gradient-to-b from-white/70 to-white"
+	>
+		<GridCard
+			href="/cover-letter"
+			title="Cover Letter"
+			description="Generate the letter tailored to the job application and your resume"
+		/>
+		<GridCard
+			href="/essay"
+			title="Essay"
+			description="Write an essay in seconds in your writing style "
+		/>
+		<GridCard
+			href="/college-statement"
+			title="College Statement"
+			description="Highlight your personality and experiences for college applications"
+		/>
+		<GridCard
+			href="/email"
+			title="Email"
+			description="Craft the impression and get back with the response you want"
+		/>
+		<GridCard
+			href="/quiz-yourself"
+			title="Quiz Yourself"
+			description="Upload and quiz yourself on any source of documents	"
+		/>
+		<GridCard
+			href="/quiz-yourself"
+			title="Quiz Yourself"
+			description="Upload and quiz yourself on any source of documents	"
+		/>
+
+		<p class="my-3 text-sm text-center text-gray-500">Made by students. For free.</p>
 	</div>
 </main>

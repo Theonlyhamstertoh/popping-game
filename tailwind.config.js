@@ -73,15 +73,21 @@ const config = {
 						transform: 'translateY(5%)',
 						'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)'
 					}
+				},
+				background: {
+					'0%, 100%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' }
 				}
 			},
 			backgroundImage: {
 				grid: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e)`
 			},
 			backgroundSize: {
+				'150%': '150%',
 				'300%': '300%'
 			},
 			animation: {
+				border: 'background ease infinite',
 				gradient: 'animatedGradient 6s ease infinite alternate',
 				bounce: 'bounce 20s ease infinite alternate'
 			}
