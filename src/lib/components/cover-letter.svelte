@@ -87,7 +87,7 @@
 	$: console.log(files);
 </script>
 
-<Card class="w-full max-w-4xl mx-auto border-2 border-green-100 shadow-xl shadow-green-100/70">
+<Card class="w-full max-w-4xl mx-auto rounded-none border-gray-100">
 	<CardContent class="grid grid-rows-[1fr_auto_auto]  gap-4 p-4 pb-2">
 		<!-- Text Prompt -->
 		<span

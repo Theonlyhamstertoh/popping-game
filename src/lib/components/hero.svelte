@@ -13,7 +13,7 @@
 	});
 </script>
 
-<div class="flex flex-col items-center justify-center py-16">
+<div class="flex flex-col items-center justify-center pb-16">
 	<CatLottie />
 	<div
 		class="flex items-center justify-center p-1 px-4 text-[0.75rem] rounded-full border border-gray-900 bg-gray-800 w-fit text-white"
@@ -26,7 +26,7 @@
 
 	<h1
 		in:fade={{ duration: 1000 }}
-		class="inline px-4 h-max mx-auto text-3xl pt-3 lg:text-5xl lg:leading-normal max-w-lg lg:max-w-3xl font-semibold leading-normal text-center text-transparent transition-all bg-clip-text bg-gradient-to-r bg-300% animate-gradient from-gray-500 to-gray-950"
+		class="inline px-4 h-max mx-auto text-3xl lg:text-5xl lg:leading-normal max-w-lg lg:max-w-3xl font-semibold leading-normal text-center text-transparent transition-all bg-clip-text bg-gradient-to-r bg-300% animate-gradient from-gray-500 to-gray-950"
 	>
 		Supercharge your writing with AI for your{' '}
 
@@ -38,13 +38,13 @@
 
 		<TypeWriter mode="loopRandom" wordInterval={3000} interval={70} element="span">
 			<span class=" p-0 m-0 mx-auto italic font-bold">
-				<span class="border-b-8 border-b-green-300"> cover letter</span>
-				<span class="border-b-8 border-b-emerald-300"> scholarships</span>
-				<span class="border-b-8 border-b-fuchsia-300"> college admission</span>
-				<span class="border-b-8 border-b-cyan-300"> research paper</span>
-				<span class="border-b-8 border-b-blue-300"> news article</span>
-				<span class="border-b-8 border-b-rose-300"> blog</span>
-				<span class="border-b-8 border-b-yellow-300"> email</span>
+				<span class="border-b-8 border-b-green-300">cover letter</span>
+				<span class="border-b-8 border-b-emerald-300">scholarships</span>
+				<span class="border-b-8 border-b-fuchsia-300">college apps</span>
+				<span class="border-b-8 border-b-cyan-300">research paper</span>
+				<span class="border-b-8 border-b-blue-300">news article</span>
+				<span class="border-b-8 border-b-rose-300">blog</span>
+				<span class="border-b-8 border-b-yellow-300">email</span>
 			</span>
 		</TypeWriter>
 	</h1>

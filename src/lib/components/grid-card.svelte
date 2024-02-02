@@ -1,12 +1,8 @@
 <script lang="ts">
-	import { CoverLetter, FileBadge, HeroTypeWriter, Prompter } from '$lib';
-
 	import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '$lib/components/ui/card';
 	import { cn } from '$lib/utils';
-	import * as Tabs from '$lib/components/ui/tabs';
 	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import LucideArrowRight from '~icons/lucide/arrow-right';
-
 	export let title: string;
 	export let description: string;
 	export let href: string;

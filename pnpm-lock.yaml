@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fontsource-variable/space-grotesk':
+    specifier: ^5.0.16
+    version: 5.0.16
+  '@fontsource/ibm-plex-mono':
+    specifier: ^5.0.8
+    version: 5.0.8
   '@fontsource/poppins':
     specifier: ^5.0.8
     version: 5.0.8
@@ -396,6 +402,14 @@ packages:
 
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+    dev: false
+
+  /@fontsource-variable/space-grotesk@5.0.16:
+    resolution: {integrity: sha512-pFM2xRqXX5ac9d6XqMgF3o1AhJpzi89Y66MTrW36xiXdEHciGkKx1XeXMW0LEwZGTe36tkopKRfmnFg5KMSDgw==}
+    dev: false
+
+  /@fontsource/ibm-plex-mono@5.0.8:
+    resolution: {integrity: sha512-AoR7K2YtlGKy3LApyLYjqjyz0o8XtkRvbB/juMsGSGNayBBAly140ykZls+VxcXjZSLQpp2RyxKo6lYOuHPmUw==}
     dev: false
 
   /@fontsource/poppins@5.0.8:
