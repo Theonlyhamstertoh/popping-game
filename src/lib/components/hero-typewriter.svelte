@@ -14,7 +14,7 @@
 </script>
 
 <div class="flex flex-col items-center justify-center py-16">
-	<CatLottie class="size-40 animate-bounce" />
+	<CatLottie />
 	<div
 		class="flex items-center justify-center p-1 px-4 text-[0.75rem] rounded-full border border-gray-900 bg-gray-800 w-fit text-white"
 	>
