@@ -21,29 +21,26 @@
 		description="Generate the letter tailored to the job application and your resume"
 	/>
 	<GridCard
-		href="/essay"
 		title="Essay"
+		comingSoon
 		description="Write an essay in seconds in your writing style "
 	/>
 	<GridCard
-		href="/college-statement"
 		title="College Statement"
+		comingSoon
 		description="Highlight your personality and experiences for college applications"
 	/>
 	<GridCard
-		href="/email"
+		comingSoon
 		title="Email"
 		description="Craft the impression and get back with the response you want"
 	/>
+
 	<GridCard
-		href="/quiz-yourself"
 		title="Quiz Yourself"
-		description="Upload and quiz yourself on any source of documents	"
-	/>
-	<GridCard
-		href="/quiz-yourself"
-		title="Quiz Yourself"
+		comingSoon
+		class="lg:col-span-2"
 		description="Upload and quiz yourself on any source of documents	"
 	/>
 </div>
-<p class="my-3 text-sm text-center text-gray-500">Made by students. For free.</p>
+<p class="my-6 text-sm text-center text-gray-500">Made by students. For free.</p>

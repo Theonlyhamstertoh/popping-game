@@ -17,6 +17,11 @@ export function formatBytes(bytes: number) {
 	}
 }
 
+export const countWords = (text: string) => {
+	const trimmedText = text.trim();
+	return trimmedText.length > 0 ? trimmedText.split(' ').length : 0;
+};
+
 type FlyAndScaleParams = {
 	y?: number;
 	x?: number;

@@ -15,14 +15,21 @@
 	// Supports weights 300-700
 	import '@fontsource-variable/space-grotesk';
 	import '../app.pcss';
+
+	import { Toaster } from '$lib/components/ui/sonner';
 </script>
 
 <!-- <nav class="">
 	<h1 class="text-xl bg- font-medium text-gray-900 text-center py-6">Meowrite</h1>
 </nav> -->
 
+<svelte:head>
+	<title>Meowrite | Home</title>
+</svelte:head>
+
+<Toaster closeButton />
 <main class="relative flex flex-col w-screen min-h-screen py-0 m-0">
-	<div class="bg-dotted-blur -z-10"></div>
+	<div class="bg-dotted-blur -z-20"></div>
 
 	<slot />
 </main>

@@ -3,14 +3,16 @@ import type { RequestHandler } from './$types';
 import { OPENAI_API_KEY } from '$env/static/private';
 
 export const POST: RequestHandler = async ({ url, request }) => {
-	const data = await request.json();
-	console.log(data);
+	const { jobDescription, resume, prompt } = await request.json();
 	// const min = Number(url.searchParams.get('min') ?? '0');
 	// const max = Number(url.searchParams.get('max') ?? '1');
 
 	const translationMessages: any[] = [
 		{ role: 'system', content: SYSTEM_PROMPT },
-		{ role: 'user', content: data.prompt }
+		{
+			role: 'user',
+			content: `Job Description:\n${jobDescription}\n\nResume:\n${resume}\n\nPrompt:${prompt}`
+		}
 	];
 
 	console.time();
@@ -38,4 +40,4 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	return json(content);
 };
 
-const SYSTEM_PROMPT = `Generate five paragraphs, with a max 750 words, for the given user prompt in MLA format`;
+const SYSTEM_PROMPT = `Generate a cover letter, max 500 words, between one to three paragraphs for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity.`;
