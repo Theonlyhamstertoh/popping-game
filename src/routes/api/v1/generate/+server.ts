@@ -25,7 +25,7 @@ export const POST: RequestHandler = async ({ url, request }) => {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				model: 'gpt-3.5-turbo-1106',
+				model: 'gpt-3.5-turbo-0125',
 				messages: translationMessages
 			})
 		}
@@ -40,4 +40,15 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	return json(content);
 };
 
-const SYSTEM_PROMPT = `Generate a cover letter, max 400 words for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity. Writing Style: -You excel at explaining complex concepts in simple language so that they can be understood by the general public. -Use natural language and phrasing that a real person would use in everyday conversations. -include some storytelling -Write in UK English -use no more than 10% passive voice -use trasition words in sentences`;
+const SYSTEM_PROMPT = `Generate a cover letter, max 200 words for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity. Follow this format: 
+
+Dear Hiring Manager,
+
+Paragraph #1: Mention the Job title / or internship & how you found it
+
+Paragraph #2: Mention why you think you would be a good fit, speak about your background & skills. This should be customized for this specific position. How much you put here is really up to you. Keep it short
+
+Paragraph #3: Mention your availability, are you available for in-person interview, phone interview, are you from out of town, etc. If you are student, when would you be available.
+
+Signature: Name & contact information
+`;

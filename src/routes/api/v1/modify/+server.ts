@@ -3,13 +3,13 @@ import type { RequestHandler } from './$types';
 import { OPENAI_API_KEY } from '$env/static/private';
 
 export const POST: RequestHandler = async ({ url, request }) => {
-	const { generated, prompt } = await request.json();
+	const { jobDescription, resume, generated, prompt } = await request.json();
 
 	const translationMessages: any[] = [
 		{ role: 'system', content: SYSTEM_PROMPT },
 		{
 			role: 'user',
-			content: `Cover Letter:\n${generated}\n\nUser Prompt:\n${prompt}\n\n`
+			content: `User Prompt:\n${prompt}\n\nCover Letter:\n${generated}\n\nResume:${resume}`
 		}
 	];
 
@@ -38,4 +38,15 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	return json(content);
 };
 
-const SYSTEM_PROMPT = `You are given a cover letter. Following the user's prompt, modify the given cover letter where it is necessary.`;
+const SYSTEM_PROMPT = `Modify the current cover letter, max 200 words for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity. Follow this format: 
+
+Dear Hiring Manager,
+
+Paragraph #1: Mention the Job title / or internship & how you found it
+
+Paragraph #2: Mention why you think you would be a good fit, speak about your background & skills. This should be customized for this specific position. How much you put here is really up to you. Keep it short
+
+Paragraph #3: Mention your availability, are you available for in-person interview, phone interview, are you from out of town, etc. If you are student, when would you be available.
+
+Signature: Name & contact information
+`;

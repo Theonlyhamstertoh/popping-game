@@ -91,7 +91,9 @@ Bachelor of Science in Design
 			method: 'POST',
 			body: JSON.stringify({
 				generated: $coverLetterStore.generated,
-				prompt: $coverLetterStore.prompt
+				prompt: $coverLetterStore.prompt,
+				jobDescription: $coverLetterStore.jobDescription,
+				resume: $coverLetterStore.resume
 			})
 		});
 		$coverLetterStore.generated = (await response.json()) ?? '';
