@@ -17,6 +17,7 @@
 	import '../app.pcss';
 
 	import { Toaster } from '$lib/components/ui/sonner';
+	import { Button } from '$lib/components/ui/button';
 </script>
 
 <!-- <nav class="">
@@ -28,6 +29,13 @@
 </svelte:head>
 
 <Toaster closeButton />
+
+<nav class="py-2 shadow-sm bg-white relative flex items-center justify-center">
+	<Button href="/" variant="ghost" class="text-sm gap-2  text-gray-700 font-mono font-normal">
+		<img src="/favicon.png" class="size-10" alt="Meowrite Logo" />
+		<h2 class="font-medium text-xl">Meowrite</h2>
+	</Button>
+</nav>
 <main class="relative flex flex-col w-screen min-h-screen py-0 m-0">
 	<div class="bg-dotted-blur -z-20"></div>
 
