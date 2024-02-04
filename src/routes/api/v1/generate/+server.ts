@@ -11,7 +11,7 @@ export const POST: RequestHandler = async ({ url, request }) => {
 		{ role: 'system', content: SYSTEM_PROMPT },
 		{
 			role: 'user',
-			content: `Im going to give you a position, company name, and job description and you write me a ATS-approved cover letter using the following resume as a reference:\n\n Job Description:\n${jobDescription}\n\nResume:\n${resume}\n\nAdditional Instruction:${prompt}`
+			content: `Im going to give you a position, company name, and job description and you write me a ATS-approved cover letter, one to three paragraphs, using the following resume as a reference:\n\n Job Description:\n${jobDescription}\n\nResume:\n${resume}\n\nAdditional Instruction:${prompt}`
 		}
 	];
 
@@ -40,4 +40,4 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	return json(content);
 };
 
-const SYSTEM_PROMPT = `Generate a cover letter, max 400 words for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity.`;
+const SYSTEM_PROMPT = `Generate a cover letter, max 400 words for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity. Writing Style: -You excel at explaining complex concepts in simple language so that they can be understood by the general public. -Use natural language and phrasing that a real person would use in everyday conversations. -include some storytelling -Write in UK English -use no more than 10% passive voice -use trasition words in sentences`;
