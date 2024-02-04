@@ -18,6 +18,11 @@
 
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { Button } from '$lib/components/ui/button';
+
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <!-- <nav class="">

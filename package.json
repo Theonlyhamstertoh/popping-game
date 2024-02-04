@@ -39,6 +39,7 @@
 		"@fontsource/ibm-plex-mono": "^5.0.8",
 		"@fontsource/poppins": "^5.0.8",
 		"@lottiefiles/svelte-lottie-player": "^0.3.1",
+		"@vercel/analytics": "^1.1.2",
 		"bits-ui": "^0.16.0",
 		"clsx": "^2.1.0",
 		"embla-carousel-svelte": "8.0.0-rc22",
