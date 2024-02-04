@@ -11,7 +11,7 @@ export const POST: RequestHandler = async ({ url, request }) => {
 		{ role: 'system', content: SYSTEM_PROMPT },
 		{
 			role: 'user',
-			content: `Job Description:\n${jobDescription}\n\nResume:\n${resume}\n\nPrompt:${prompt}`
+			content: `Im going to give you a position, company name, and job description and you write me a ATS-approved cover letter using the following resume as a reference:\n\n Job Description:\n${jobDescription}\n\nResume:\n${resume}\n\nAdditional Instruction:${prompt}`
 		}
 	];
 
@@ -40,4 +40,4 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	return json(content);
 };
 
-const SYSTEM_PROMPT = `Generate a cover letter, max 500 words, between one to three paragraphs for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity.`;
+const SYSTEM_PROMPT = `Generate a cover letter, max 400 words, between one to three paragraphs for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity.`;

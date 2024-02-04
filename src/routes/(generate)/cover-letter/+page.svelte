@@ -100,8 +100,7 @@ Bachelor of Science in Design
 </h1>
 
 <p class="text-center px-4 text-pretty max-w-xl mx-auto text-gray-700">
-	Revolutionize your job hunt with Meowrite cover letter generator, crafting your personalized
-	letters in just seconds
+	Speed up your job hunt with Meowrite AI and craft your personalized cover letters in just seconds
 </p>
 
 <div class="max-w-2xl px-4 mx-auto w-full my-4 space-y-3">
