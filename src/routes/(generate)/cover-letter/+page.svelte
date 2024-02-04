@@ -9,6 +9,7 @@
 
 	import LucideChevronsUpDown from '~icons/lucide/chevrons-up-down';
 	import LucideLoader2 from '~icons/lucide/loader-2';
+	import LucideSendHorizontal from '~icons/lucide/send-horizontal';
 	import { fade } from 'svelte/transition';
 
 	import { Progress } from '$lib/components/ui/progress';
@@ -19,6 +20,7 @@
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Label } from '$lib/components/ui/label';
 	import * as Carousel from '$lib/components/ui/carousel';
+	import { Input } from '$lib/components/ui/input';
 
 	const jobDescriptionPlaceholder = `Job Description:
 
@@ -76,6 +78,19 @@ Bachelor of Science in Design
 			body: JSON.stringify({
 				jobDescription: $coverLetterStore.jobDescription,
 				resume: $coverLetterStore.resume,
+				prompt: $coverLetterStore.prompt
+			})
+		});
+		$coverLetterStore.generated = (await response.json()) ?? '';
+		console.log($coverLetterStore.generated);
+		loading = false;
+	};
+	const modifyEssay = async () => {
+		loading = true;
+		const response = await fetch('/api/v1/generate', {
+			method: 'POST',
+			body: JSON.stringify({
+				generated: $coverLetterStore.generated,
 				prompt: $coverLetterStore.prompt
 			})
 		});
@@ -203,10 +218,26 @@ Bachelor of Science in Design
 	class="bg-grid bg-white min-h-96 relative py-8 flex flex-col justify-center items-center space-y-3"
 >
 	{#if $coverLetterStore.generated}
-		<div class="p-2 bg-white w-full max-w-3xl border">
+		<div class="p-2 flex gap-2 bg-white w-full max-w-3xl border">
 			<Button on:click={copyToClipboard} variant="secondary" size="icon" class="">
 				<LucideClipboard class="text-gray-600 size-5" />
 			</Button>
+
+			<Label class="bg-secondary grow flex ">
+				<Input
+					class="outline-0  focus-visible:ring-0 font-normal ring-0"
+					placeholder="Modify the generated essay here"
+				/>
+				<Button
+					on:click={modifyEssay}
+					disabled={loading || $coverLetterStore.generated.length === 0}
+					variant="default"
+					size="icon"
+					class=""
+				>
+					<LucideSendHorizontal class="text-white size-5" />
+				</Button>
+			</Label>
 		</div>
 	{/if}
 	<div class="max-w-3xl mx-auto bg-white space-y-2 border px-4 py-3 font-mono text-sm">

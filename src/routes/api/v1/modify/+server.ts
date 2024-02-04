@@ -3,15 +3,13 @@ import type { RequestHandler } from './$types';
 import { OPENAI_API_KEY } from '$env/static/private';
 
 export const POST: RequestHandler = async ({ url, request }) => {
-	const { jobDescription, resume, prompt } = await request.json();
-	// const min = Number(url.searchParams.get('min') ?? '0');
-	// const max = Number(url.searchParams.get('max') ?? '1');
+	const { generated, prompt } = await request.json();
 
 	const translationMessages: any[] = [
 		{ role: 'system', content: SYSTEM_PROMPT },
 		{
 			role: 'user',
-			content: `Im going to give you a position, company name, and job description and you write me a ATS-approved cover letter using the following resume as a reference:\n\n Job Description:\n${jobDescription}\n\nResume:\n${resume}\n\nAdditional Instruction:${prompt}`
+			content: `Cover Letter:\n${generated}\n\nUser Prompt:\n${prompt}\n\n`
 		}
 	];
 
@@ -40,4 +38,4 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	return json(content);
 };
 
-const SYSTEM_PROMPT = `Generate a cover letter, max 400 words for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity.`;
+const SYSTEM_PROMPT = `You are given a cover letter. Following the user's prompt, modify the given cover letter where it is necessary.`;
