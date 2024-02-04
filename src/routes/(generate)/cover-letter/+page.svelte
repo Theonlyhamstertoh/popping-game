@@ -87,7 +87,7 @@ Bachelor of Science in Design
 	};
 	const modifyEssay = async () => {
 		loading = true;
-		const response = await fetch('/api/v1/generate', {
+		const response = await fetch('/api/v1/modify', {
 			method: 'POST',
 			body: JSON.stringify({
 				generated: $coverLetterStore.generated,
@@ -227,6 +227,7 @@ Bachelor of Science in Design
 
 			<Label class="bg-secondary grow flex ">
 				<Input
+					bind:value={$coverLetterStore.prompt}
 					class="outline-0  focus-visible:ring-0 font-normal ring-0"
 					placeholder="Modify the generated essay here"
 				/>

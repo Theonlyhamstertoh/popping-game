@@ -36,13 +36,7 @@
 			>
 		{/if}
 
-		<TypeWriter
-			mode="loopRandom"
-			keepCursorOnFinish
-			wordInterval={3000}
-			interval={70}
-			element="span"
-		>
+		<TypeWriter mode="loopRandom" wordInterval={3000} interval={70} element="span">
 			<span class=" p-0 m-0 mx-auto italic font-bold">
 				<span class="border-b-8 border-b-green-300">cover letter</span>
 				<span class="border-b-8 border-b-emerald-300">scholarships</span>

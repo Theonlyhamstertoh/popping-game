@@ -14,6 +14,7 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	];
 
 	console.time();
+	console.log(translationMessages);
 	const res = await fetch(
 		'https://gateway.ai.cloudflare.com/v1/7727598a75c80d2611016ea5efaee1fe/jello-workers-ai/openai/chat/completions',
 		{
@@ -38,7 +39,7 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	return json(content);
 };
 
-const SYSTEM_PROMPT = `Modify the current cover letter, max 200 words for the provided job description and the user's resume. Craft a cover letter with greater burstiness and perplexity. Follow this format: 
+const SYSTEM_PROMPT = `Modify the current cover letter, max 200 words for the provided job description and the user's resume. Avoid corporate jargons, keep it conversational and to the point. Keep it concise. Follow this format: 
 
 Dear Hiring Manager,
 
