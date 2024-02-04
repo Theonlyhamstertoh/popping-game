@@ -16,11 +16,11 @@
 <Card
 	class={cn(
 		'group rounded-none  hover:shadow-md hover:border-gray-500 border-double  transition-colors cursor-pointer flex-col relative shadow-none ',
-		comingSoon && 'hover:border-border hover:shadow-none cursor-default',
+		comingSoon && 'hover:border-border hover:shadow-none opacity-50',
 		className
 	)}
 >
-	<a {href}>
+	<a {href} class:cursor-default={comingSoon}>
 		<div
 			class="group-hover:animate-gradient group-hover:scale-110 transition duration-150 bg-grid-blur w-full h-full"
 		></div>
@@ -29,7 +29,7 @@
 				>{title}
 
 				{#if comingSoon}
-					<Badge class="top-0 right-0 absolute  py-2 rounded-none" variant="default"
+					<Badge class="top-0 right-0 absolute font-normal  py-2 rounded-none" variant="secondary"
 						>Coming Soon</Badge
 					>
 				{:else}
