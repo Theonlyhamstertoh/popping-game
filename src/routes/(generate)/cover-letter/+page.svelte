@@ -91,7 +91,7 @@ Bachelor of Science in Design
 <div
 	class="flex items-center justify-center p-1 px-4 text-[0.75rem] rounded-full border border-gray-900 bg-gray-800 w-fit mx-auto text-white"
 >
-	<span class="flex items-center font-medium"> Meowrite AI</span>
+	<span class="flex items-center font-medium">In Beta</span>
 </div>
 <h1
 	class="inline px-4 h-max mx-auto text-3xl lg:text-5xl lg:leading-normal max-w-lg lg:max-w-3xl font-semibold leading-normal text-center text-transparent transition-all bg-clip-text bg-gradient-to-r bg-300% animate-gradient from-gray-500 to-gray-950"
@@ -160,7 +160,7 @@ Bachelor of Science in Design
 		<Collapsible.Trigger
 			class="flex gap-2 items-center border w-full bg-white border-gray-200 shadow-sm px-6 py-3 [&[data-state=open]]:bg-gray-50"
 		>
-			<Check checked={$coverLetterStore.resume.length > 0} />
+			<Check checked={$coverLetterStore.prompt.length > 0} />
 
 			<h3 class=" w-full font-mono text-sm text-gray-700 text-start">3. Your Prompt (Optional)</h3>
 			<LucideChevronsUpDown class="size-4" />
@@ -191,18 +191,18 @@ Bachelor of Science in Design
 			loading}
 		class="w-full font-mono"
 	>
-		<LucidePlus class="size-4 mr-2" />
-		Generate Essay
+		{#if loading === true}
+			<LucideLoader2 class="size-4 mr-2 animate-spin" /> Creating Cover Letter...
+		{:else}
+			<LucidePlus class="size-4 mr-2" />
+			Generate Essay
+		{/if}
 	</Button>
-
-	{#if loading === true}
-		<div class="mx-auto w-fit flex items-center gap-3 animate-pulse">
-			<LucideLoader2 class="size-4 animate-spin" /> Creating Cover Letter...
-		</div>
-	{/if}
 </div>
 
-<div class="bg-grid min-h-96 relative py-8 flex flex-col justify-center items-center space-y-3">
+<div
+	class="bg-grid bg-white min-h-96 relative py-8 flex flex-col justify-center items-center space-y-3"
+>
 	{#if $coverLetterStore.generated}
 		<div class="p-2 bg-white w-full max-w-3xl border">
 			<Button on:click={copyToClipboard} variant="secondary" size="icon" class="">
@@ -217,8 +217,13 @@ Bachelor of Science in Design
 				class="resize-none rounded-none border-none text-gray-900 outline-none empty:before:content-['Your_Cover_Letter_Will_Appear_Here']"
 				bind:innerText={$coverLetterStore.generated}
 			/>
+		{:else if loading}
+			<span
+				class="w-fit resize-none h-6 items-center flex gap-2 rounded-none border-none text-gray-900 outline-none"
+				><LucideLoader2 class="size-4 animate-spin" /> In Progress...</span
+			>
 		{:else}
-			<span class="w-fit resize-none rounded-none border-none p-3 text-gray-900 outline-none"
+			<span class="w-fit resize-none h-6 rounded-none border-none p-3 text-gray-900 outline-none"
 				>Your Cover Letter Will Appear Here</span
 			>
 		{/if}
