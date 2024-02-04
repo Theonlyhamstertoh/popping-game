@@ -18,6 +18,7 @@
 
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { Button } from '$lib/components/ui/button';
+	import GoogleAnalytics from '$lib/components/google-analytics.svelte';
 
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
@@ -35,6 +36,7 @@
 
 <Toaster closeButton />
 
+<GoogleAnalytics />
 <nav class="py-2 shadow-sm bg-white relative flex items-center justify-center">
 	<Button href="/" variant="ghost" class="text-sm gap-2  text-gray-700 font-mono font-normal">
 		<img src="/favicon.png" class="size-10" alt="Meowrite Logo" />
