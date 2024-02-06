@@ -43,6 +43,7 @@
 		"@vercel/analytics": "^1.1.2",
 		"bits-ui": "^0.16.0",
 		"clsx": "^2.1.0",
+		"elevenlabs-node": "^2.0.3",
 		"embla-carousel-svelte": "8.0.0-rc22",
 		"lottie-web": "^5.12.2",
 		"svelte-sonner": "^0.3.11",

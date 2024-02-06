@@ -1,3 +1,4 @@
+import { ELEVEN_LABS_API_KEY } from '$env/static/private';
 import type { Actions } from './$types';
 
 export const actions: Actions = {
