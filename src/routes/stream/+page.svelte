@@ -1,5 +1,5 @@
-<script>
-	import { PUBLIC_ELEVEN_LABS_API_KEY } from '$env/static/public';
+<!-- <script>
+
 	import { onMount } from 'svelte';
 
 	onMount(() => {
@@ -21,7 +21,7 @@
 					stability: 0.5,
 					similarity_boost: 0.8
 				},
-				xi_api_key: PUBLIC_ELEVEN_LABS_API_KEY
+				// xi_api_key: PUBLIC_ELEVEN_LABS_API_KEY
 				// replace with your API key
 			};
 
@@ -85,4 +85,4 @@
 	};
 </script>
 
-<h1>Yo</h1>
+<h1>Yo</h1> -->
