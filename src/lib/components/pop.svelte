@@ -2,32 +2,34 @@
 	import { cn } from '$lib/utils';
 	import { fade } from 'svelte/transition';
 	import LucidePartyPopper from '~icons/lucide/party-popper';
+	import { game } from '$lib/stores/game.store';
 
-	let clicked = false;
+	export let clicked: boolean;
+	export let id: string;
 	let counter = 5000;
+	export let order: number | null;
 	let timeoutId: number;
 	export let audio: HTMLAudioElement;
-
 	const playAudio = () => {
 		if (clicked) return;
+		game.clickButton(id);
 		audio.currentTime = 0.96;
-		clicked = true;
 		audio.play();
-		const countdown = () => {
-			counter -= 1;
-			if (counter === 0) {
-				clicked = false;
-				counter = 100;
-			} else {
-				timeoutId = setTimeout(countdown, 1);
-			}
-		};
+		// const countdown = () => {
+		// 	counter -= 1;
+		// 	if (counter === 0) {
+		// 		clicked = false;
+		// 		counter = 100;
+		// 	} else {
+		// 		timeoutId = setTimeout(countdown, 1);
+		// 	}
+		// };
 
-		timeoutId = setTimeout(countdown, 1);
+		// timeoutId = setTimeout(countdown, 1);
 	};
 </script>
 
-<div in:fade class={cn(' bg-gray-950 rounded-lg border', clicked && 'bg-white')}>
+<div in:fade class={cn(' bg-black rounded-lg border', clicked && 'bg-white')}>
 	<button
 		class={cn(
 			'size-12 font-bold transition relative  text-gray-50 cursor-pointer',
@@ -37,6 +39,6 @@
 		)}
 		on:click={playAudio}
 	>
-		{clicked ? counter : 'Pop'}
+		{clicked ? order : 'Pop'}
 	</button>
 </div>
